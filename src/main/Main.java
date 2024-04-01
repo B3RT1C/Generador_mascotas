@@ -9,12 +9,13 @@ import util.Constants;
 public class Main {
 	public static void main(String[] args) throws IOException {
 		
-		String name = validarNombre("mascotas");
+		String name = "Mascotas";
 		
 		Generator.generate(name);
 		
 	}
 	
+	@SuppressWarnings("unused")
 	private static String validarNombre(String fileName) {
 		int i = 0;
 		for (File file : new File(Constants.generatorFilePath).listFiles()) {

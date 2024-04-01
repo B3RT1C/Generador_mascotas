@@ -9,6 +9,8 @@ import util.Constants;
 public class Generator {
 	public static String generate(String fileName) throws IOException {
 		
+		fileName = validateFileName(fileName);
+		
 		File file = createFile(fileName);
 		
 		fillFile(new FileWriter(file));
@@ -70,5 +72,23 @@ public class Generator {
 		}
 		
 		writer.close();
+	}
+	
+	private static String validateFileName(String fileName) {
+		int i = 0;
+		for (File file : new File(Constants.generatorFilePath).listFiles()) {
+			String aux = file.getName().substring(0, file.getName().length() - 4);
+			
+			if (fileName.equals(aux)) {
+				i++;
+				if (i == 1) {
+					fileName = fileName + i;					
+				} else {
+					fileName = fileName.substring(0, fileName.length() - String.valueOf(i).length()) + i;					
+				}
+			}
+		}
+		
+		return fileName;
 	}
 }
