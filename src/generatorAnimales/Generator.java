@@ -39,8 +39,8 @@ public class Generator {
 	
 	/**
 	 * Crea un archivo con la ruta de {@link Constants#generatorFilePath} el fileName recibido en {@link #generate(String)} y la extension del archivo de {@link Constants#generatorFileExtension}
-	 * @param name
-	 * @return
+	 * @param name Nombre que recivira el archivo creado
+	 * @return Objeto File ya creado
 	 * @throws IOException
 	 * @see Constants
 	 * @see <a href="../constant-values.html">Valores de las constantes</a>
@@ -58,7 +58,7 @@ public class Generator {
 	/**
 	 * Escribe de {@link Constants#minGeneratedPets} a {@link Constants#maxGeneratedPets} lineas<br>
 	 * Cada linea tendra una cantidad diferente de datos depentiendo del tipo de mascota recogido en {@link Constants#petType}
-	 * @param writer
+	 * @param writer Objeto enlazado con el archivo creado que habilita la escritura en dicho archivo
 	 * @throws IOException
 	 * @see Constants
 	 * @see <a href="../constant-values.html">Valores de las constantes</a>

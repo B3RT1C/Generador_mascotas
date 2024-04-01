@@ -7,6 +7,7 @@ import generatorAnimales.Generator;
 import util.Constants;
 
 /**
+ * <a href="https://github.com/B3RT1C/Generador_mascotas/tree/main">Proyecto Github</a><br>
  * Genera un archivo con un numero aleatorio de "Mascotas"<br>
  * Escribira una linea por mascota<br>
  * Cada linea tiene la siguiente estructura dependiendo del tipo de mascota:<br>
@@ -18,6 +19,11 @@ import util.Constants;
  * @version 1.0
  */
 public class Main {
+	/**
+	 * Bucle principal del programa, contiene la variable name con el nombre candidato para el archivo a crear y llama al metodo {@link Generator#generate(String)}
+	 * @param args
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws IOException {
 		
 		String name = "Mascotas";

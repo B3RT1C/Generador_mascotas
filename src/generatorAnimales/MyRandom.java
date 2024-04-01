@@ -7,14 +7,17 @@ import util.AgeCalculator;
 import util.Constants;
 
 /**
- * Contiene metodos utiles que generan informacion aleatoria sobre las mascotas o la seleccionan aleatoriamente de {@link Constants}
+ * Contiene metodos utiles que generan informacion aleatoria sobre las mascotas o la seleccionan aleatoriamente de {@link Constants}<br>
  * Clase usada primariamente por {@link Generator}
  * @since 1.0
  * @see Constants
  * @see <a href="../constant-values.html">Valores de las constantes</a>
  */
 public class MyRandom {
-	public static Random rand = new Random();
+	/**
+	 * Objeto Random usado en las clases {@link Generator} y {@link MyRandom}
+	 */
+	protected static Random rand = new Random();
 
 	/**
 	 * Constructor privado ya que la clase esta pensada para ser usada de manera estatica
@@ -113,7 +116,7 @@ public class MyRandom {
 	}
 	
 	/**
-	 * Usa los metodos de {@link MyRandom} y {@link AgeCalculator#calculate(String)} para generar un string con todos los datos comunes a todas las mascotas
+	 * Genera un array con todos los datos comunes a todas las mascotas
 	 * @return Array de String con [nombre] [Edad] [Estado] [Fecha de Nacimiento]
 	 * @see AgeCalculator#calculate(String)
 	 */
@@ -128,6 +131,10 @@ public class MyRandom {
 		return new String[]{name,age,state,birthDate};
 	}
 	
+	/**
+	 * Genera un array con todos los datos comunes a todos los perros
+	 * @return Array de String con [raza] [pulgas?]
+	 */
 	public static String[] randomPerroVariables() {
 		String breed = randomDogBreed();
 		String fleas = String.valueOf(MyRandom.rand.nextBoolean());
@@ -135,6 +142,10 @@ public class MyRandom {
 		return new String[]{breed,fleas};
 	}
 	
+	/**
+	 * Genera un array con todos los datos comunes a los gatos
+	 * @return Array de String con [color] [peloLargo?]
+	 */
 	public static String[] randomGatoVariables() {
 		String color = randomPetColor();
 		String longHair = String.valueOf(MyRandom.rand.nextBoolean());
@@ -142,6 +153,10 @@ public class MyRandom {
 		return new String[]{color,longHair};
 	}
 	
+	/**
+	 * Genera un array con todos los datos comunes a las aves
+	 * @return Array de String con [pico?] [vuela?]
+	 */
 	public static String[] randomBirdVariables() {
 		String beak = String.valueOf(MyRandom.rand.nextBoolean());
 		String flies = String.valueOf(MyRandom.rand.nextBoolean());
@@ -149,6 +164,10 @@ public class MyRandom {
 		return new String[]{beak,flies};
 	}
 	
+	/**
+	 * Genera un array con todos los datos comunes a los loros
+	 * @return Array de String con [origen] [habla?]
+	 */
 	public static String[] randomLoroVariables() {
 		String origin = randomParrotOrigin();
 		String talks = String.valueOf(MyRandom.rand.nextBoolean());
@@ -156,6 +175,10 @@ public class MyRandom {
 		return new String[]{origin,talks};
 	}
 	
+	/**
+	 * Genera un array con todos los datos comunes a los canarios
+	 * @return Array de String con [color] [canta?]
+	 */
 	public static String[] randomCanarioVariables() {
 		String color = randomPetColor();
 		String sings = String.valueOf(MyRandom.rand.nextBoolean());
